@@ -11,6 +11,7 @@ namespace TurtleLittle
     {
         static void Main(string[] args)
         {
+            Turtle.Move(100);
         }
     }
 }
