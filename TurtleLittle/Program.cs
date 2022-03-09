@@ -8,26 +8,29 @@ namespace TurtleLittle
         static void Main(string[] args)
         {
             GraphicsWindow.KeyDown += GraphicsWindow_KeyDown;
-            /*GraphicsWindow.BrushColor = "Red";
-            var eat = Shapes.AddRectangle(10,10);
-            Shapes.Move(eat, 200, 200);*/
-            Turtle.X = 100;
-            Turtle.Y = 100;
+            GraphicsWindow.BrushColor = "Red";
+            var eat = Shapes.AddRectangle(29, 20);
+            int x = 178;
+            int y = 190;
+
+            Shapes.Move(eat, x, y);
+            
             
               while (true)
               {
-                  Turtle.Move(10);
-                GraphicsWindow.BrushColor = "Red";
-                var eat = Shapes.AddRectangle(20, 20);
-                Shapes.Move(eat, 200, 300);
-              /*  if (20 == Turtle.X && 30 == Turtle.Y)*/
-                    Shapes.Move(eat, 30, 40);
-                    Shapes.Move(eat, Turtle.X, Turtle.Y+10);
-                /* for (int i = 0; i < 7; i++)
-                 {
-
-                     //AddFood(200 - i * 7, 200 - i * i * (i + 1) * 15, 10 + i * 2, 10 - i, "Red");
-                 }*/
+                int cus = 0;
+                if (Turtle.X >= x && Turtle.X <= x +15 && Turtle.Y >= y && Turtle.Y <= y+10 )
+                {
+                    GraphicsWindow.BrushColor = "Green";
+                   for(int i = 0; i < 7;i++)
+                       Shapes.Move(Shapes.AddRectangle(i*i, i+2), 170+i*11, 180+i*i*i*i*2);
+                    Shapes.Move(eat, x+20, y+20);
+                    x += 20;
+                    y += 20;
+                    cus++;
+                    Shapes.Zoom(eat, 0.8, 0.8);
+                }
+                Turtle.Move(10);
             }
         }
 
