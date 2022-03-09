@@ -11,34 +11,19 @@ namespace TurtleLittle
     {
         static void Main(string[] args)
         {
-            Turtle.Speed = 9;
+            Turtle.Speed = 8;
+            //coordinates
+            Turtle.X = 200;
+            Turtle.Y = 200;
 
-            Turtle.Move(100);
-            Turtle.TurnRight();
-
-            Turtle.Move(100);
-            Turtle.TurnRight();
-
-            Turtle.Move(100);
-            Turtle.TurnRight();
-
-            Turtle.Move(90);
-            Turtle.TurnRight();
-
-            Turtle.Move(80);
-            Turtle.TurnRight();
-
-            Turtle.Move(80);
-            Turtle.TurnRight();
-
-            Turtle.Move(70);
-            Turtle.TurnRight();
-
-            Turtle.Move(70);
-            Turtle.TurnRight();
-
+            //T
+            Turtle.Angle = 0;
             Turtle.Move(60);
-            Turtle.TurnRight();
+            Turtle.TurnLeft();
+            Turtle.Move(20);
+            Turtle.Angle = 90;
+            Turtle.Move(40);
+
         }
     }
 }
