@@ -28,6 +28,18 @@ namespace TurtleLittle
                 Turtle.TurnRight();
             }
         }
+
+        static void WriteR(int size)
+        {
+            Turtle.Angle = 0;
+            for( int i = 0; i < 4; i++)
+            {
+                Turtle.Move(size);
+                Turtle.TurnRight();
+            }
+            Turtle.Angle = 180;
+            Turtle.Move(size);
+        }
         static void Main(string[] args)
         {
             Turtle.Speed = 8;
@@ -42,10 +54,14 @@ namespace TurtleLittle
             Turtle.Y = 200;
             WriteO();
 
+            Turtle.X = 360;
+            Turtle.Y = 180;
+            WriteR(40);
+
 
 
             //T
-            Turtle.X = 400;
+            Turtle.X = 440;
             Turtle.Y = 200;
             WriteT(20);
 
