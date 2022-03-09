@@ -7,7 +7,9 @@ namespace TurtleLittle
         static void Main(string[] args)
         {
             GraphicsWindow.KeyDown += GraphicsWindow_KeyDown;
-
+            GraphicsWindow.BrushColor = "Red";
+            var eat = Shapes.AddRectangle(10,10);
+            Shapes.Move(eat, 200, 200);
             while (true)
             {
                  Turtle.Move(10);
