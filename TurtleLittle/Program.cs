@@ -20,14 +20,14 @@ namespace TurtleLittle
               while (true)
               {
                 int cus = 0;
-                if (Turtle.X >= x && Turtle.X <= x +15 && Turtle.Y >= y && Turtle.Y <= y+10 )
+                if (Turtle.X >= x && Turtle.X <= x +20 && Turtle.Y >= y && Turtle.Y <= y+20 )
                 {
                     GraphicsWindow.BrushColor = "Green";
                    for(int i = 0; i < 7;i++)
                        Shapes.Move(Shapes.AddRectangle(i*i, i+2), 170+i*11, 180+i*i*i*i*2);
                     Random rand = new Random();
-                    x = rand.Next(0,100);
-                    y = rand.Next(0, 100);
+                    x = rand.Next(0, GraphicsWindow.Width);
+                    y = rand.Next(0, GraphicsWindow.Height);
                     Shapes.Move(eat, x , y);
                     cus++;
                     Shapes.Zoom(eat, 0.8, 0.8);
