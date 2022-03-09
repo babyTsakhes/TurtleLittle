@@ -9,14 +9,14 @@ namespace TurtleLittle
 {
     class Program
     {
-        static void WriteT()
+        static void WriteT(int size)
         {
             Turtle.Angle = 0;
-            Turtle.Move(60);
+            Turtle.Move(size*3);
             Turtle.TurnLeft();
-            Turtle.Move(20);
+            Turtle.Move(size);
             Turtle.Angle = 90;
-            Turtle.Move(40);
+            Turtle.Move(size*2);
         }
 
         static void WriteO()
@@ -36,7 +36,7 @@ namespace TurtleLittle
             Turtle.Y = 200;
 
             //T
-            WriteT();
+            WriteT(20);
 
             Turtle.X = 260;
             Turtle.Y = 200;
@@ -47,7 +47,7 @@ namespace TurtleLittle
             //T
             Turtle.X = 400;
             Turtle.Y = 200;
-            WriteT();
+            WriteT(20);
 
         }
     }
