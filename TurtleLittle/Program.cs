@@ -12,14 +12,10 @@ namespace TurtleLittle
             GraphicsWindow.BrushColor = "Red";
             var eat = Shapes.AddRectangle(29, 20);
             int x = 178;
-            int y = 190;
-
+            int y = 178;
             Shapes.Move(eat, x, y);
-            
-            
               while (true)
               {
-                int cus = 0;
                 if (Turtle.X >= x && Turtle.X <= x +20 && Turtle.Y >= y && Turtle.Y <= y+20 )
                 {
                     GraphicsWindow.BrushColor = "Green";
@@ -29,8 +25,8 @@ namespace TurtleLittle
                     x = rand.Next(0, GraphicsWindow.Width);
                     y = rand.Next(0, GraphicsWindow.Height);
                     Shapes.Move(eat, x , y);
-                    cus++;
                     Shapes.Zoom(eat, 0.8, 0.8);
+                    Turtle.Speed++;
                 }
                 Turtle.Move(10);
             }
