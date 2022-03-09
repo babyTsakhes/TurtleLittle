@@ -1,6 +1,7 @@
 ﻿using Microsoft.SmallBasic.Library;
 using System;
 
+
 namespace TurtleLittle
 {
     class Program
@@ -24,9 +25,10 @@ namespace TurtleLittle
                     GraphicsWindow.BrushColor = "Green";
                    for(int i = 0; i < 7;i++)
                        Shapes.Move(Shapes.AddRectangle(i*i, i+2), 170+i*11, 180+i*i*i*i*2);
-                    Shapes.Move(eat, x+20, y+20);
-                    x += 20;
-                    y += 20;
+                    Random rand = new Random();
+                    x = rand.Next(0,100);
+                    y = rand.Next(0, 100);
+                    Shapes.Move(eat, x , y);
                     cus++;
                     Shapes.Zoom(eat, 0.8, 0.8);
                 }
