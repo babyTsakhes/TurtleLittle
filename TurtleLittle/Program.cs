@@ -1,4 +1,5 @@
 ﻿using Microsoft.SmallBasic.Library;
+using System;
 
 namespace TurtleLittle
 {
@@ -7,15 +8,29 @@ namespace TurtleLittle
         static void Main(string[] args)
         {
             GraphicsWindow.KeyDown += GraphicsWindow_KeyDown;
-            GraphicsWindow.BrushColor = "Red";
+            /*GraphicsWindow.BrushColor = "Red";
             var eat = Shapes.AddRectangle(10,10);
-            Shapes.Move(eat, 200, 200);
+            Shapes.Move(eat, 200, 200);*/
+            Turtle.X = 100;
+            Turtle.Y = 100;
             while (true)
             {
-                 Turtle.Move(10);
+                Turtle.Move(10);
+                for (int i = 0; i < 7; i++)
+                {
+                    AddFood(200 - i * 7, 200 - i * i * (i + 1) * 15, 10 + i * 2, 10 - i, "Red");
+                }
             }
         }
 
+        private static void AddFood(int x, int y, int width,
+            int height, string color)
+        {
+           
+                GraphicsWindow.BrushColor = color;
+                var eat = Shapes.AddRectangle(width, height);
+                Shapes.Move(eat, x, y);
+        }
         private static void GraphicsWindow_KeyDown()
         {
             if(GraphicsWindow.LastKey == "Up")
